@@ -1,0 +1,35 @@
+{
+  "name": "generator-react",
+  "version": "1.0.0",
+  "description": "Set of commands to initiate the app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steve Michelotti",
+  "license": "ISC",
+  "dependencies": {
+    "connect": "^3.4.0",
+    "gulp": "^3.9.0",
+    "gulp-beautify": "^2.0.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^5.0.0",
+    "gulp-inject": "^2.2.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-size": "^2.0.0",
+    "jshint-stylish": "^2.0.1",
+    "lodash": "^4.17.4",
+    "opn": "^3.0.2",
+    "request": "^2.81.0",
+    "serve-static": "^1.10.0",
+    "wiredep": "^3.0.0-beta",
+    "yeoman-generator": "^0.21.1",
+    "yosay": "^2.0.2"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "erp"
+  ]
+}

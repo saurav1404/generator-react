@@ -1,0 +1,6 @@
+{
+    "directory": "erp/assets/lib",
+    "scripts": {
+        "postinstall":  "gulp wiredep"
+    }
+}

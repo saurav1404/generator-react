@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.6",
+    "angular-bootstrap": "~0.13.4",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap-css-only": "~3.3.5",
+    "lodash": "~4.14.1",
+    "moment": "~2.10.6",
+    "angular-ui-utils": "~3.0.0"
+  }
+}

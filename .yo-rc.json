@@ -1,0 +1,16 @@
+{
+  "generator-react": {
+    "ngappname": "app",
+    "reactappname": "app"
+  },
+  "base-app": {
+    "ngappname": "app"
+  },
+  "generator-common": {
+    "editorconfig": false,
+    "gitattributes": true,
+    "gitignore": true,
+    "jshintrc": false,
+    "test-jshintrc": false
+  }
+}
