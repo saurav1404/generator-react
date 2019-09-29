@@ -98,23 +98,19 @@ module.exports = generators.NamedBase.extend({
             var lazypathindexOfData = lazypathfile.indexOf("const "+componentName+" = React.lazy");
             if(lazypathindexOfData < 0){
                 var newLazypathFile = insertInString(lazypathfile, lazypathdata, lazypathindex);
-                this.fs.write('../erp/src/app/components/App/App.tsx', newLazypathFile);
+                var lazyhook = '{/* # lazyroute here */}';
+                var lazydata = "\t\t\t<LazyRoute path={Routes."+componentName.toUpperCase()+"} component={"+componentName+"} fallback={loading} exact={true} />";
+                var lazyindex = newLazypathFile.indexOf(lazyhook);
+                var lazyindexOfData = newLazypathFile.indexOf("path={Routes."+componentName.toUpperCase()+"}");
+                if(lazyindexOfData < 0){
+                    var newLazyFile = insertInString(newLazypathFile, lazydata, lazyindex);
+                    fs.writeFileSync('../erp/src/app/components/App/App.tsx', newLazyFile);
+                }else{
+                    console.log('Lazy Config for this component already exists!')
+                }
             }else{
                 console.log('Lazy Config for this component already exists!')
             }
-
-            var lazyfile = this.fs.read('../erp/src/app/components/App/App.tsx');
-            var lazyhook = '{/* # lazyroute here */}';
-            var lazydata = "\t\t\t\t\t<LazyRoute path={Routes."+componentName.toUpperCase()+"} component={"+componentName+"} fallback={loading} exact={true} />";
-            var lazyindex = lazyfile.indexOf(lazyhook);
-            var lazyindexOfData = lazyfile.indexOf("path={Routes."+componentName.toUpperCase()+"}");
-            if(lazyindexOfData < 0){
-                var newLazyFile = insertInString(lazyfile, lazydata, lazyindex);
-                this.fs.write('../erp/src/app/components/App/App.tsx', newLazyFile);
-            }else{
-                console.log('Lazy Config for this component already exists!')
-            }
-
         }
 
         function insertInString(a, b, positionEnd){
